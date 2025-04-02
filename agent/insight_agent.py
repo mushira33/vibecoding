@@ -3,10 +3,14 @@ import numpy as np
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
 from pydantic import BaseModel
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to non-interactive 'Agg'
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
+import os
+import json
 
 class ReconciliationResult(BaseModel):
     timestamp: datetime
@@ -102,7 +106,6 @@ class InsightAgent:
     def generate_visualizations(self) -> Dict[str, str]:
         """Generate visualizations for insights"""
         # Create plots directory if it doesn't exist
-        import os
         os.makedirs('plots', exist_ok=True)
         
         # Discrepancy over time
