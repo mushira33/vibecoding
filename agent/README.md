@@ -1,14 +1,14 @@
 # Data Reconciliation Insight Agent
 
-This agent analyzes reconciliation results and provides valuable insights through statistical analysis, anomaly detection, and visualization.
+This agent provides data analysis and insights for the data reconciliation system.
 
 ## Features
 
 - Trend Analysis
 - Anomaly Detection
-- Category-wise Analysis
-- Automated Visualization Generation
-- RESTful API Interface
+- Category Analysis
+- Visualization Generation
+- Web Dashboard Integration
 
 ## Installation
 
@@ -25,76 +25,59 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Running the API Server
+### Running the Web Dashboard
 
+1. Start the Flask application:
 ```bash
-python api.py
+python web_integration.py
 ```
 
-The server will start on `http://localhost:8000`
+2. Open your browser and navigate to `http://localhost:5000`
 
-### API Endpoints
+### Using the Integration API
 
-- `GET /`: Welcome message
-- `GET /insights`: Get all insights
-- `GET /trends`: Get trend analysis
-- `GET /anomalies`: Get detected anomalies
-- `GET /category-analysis`: Get category-wise analysis
-
-### Running the Agent Directly
-
-```bash
-python insight_agent.py
-```
-
-This will run the agent with mock data and print a summary of insights.
-
-## Integration with Main Application
-
-1. Import the agent in your main application:
 ```python
-from agent.insight_agent import InsightAgent
+from integration import ReconciliationIntegration
+
+# Initialize the integration
+integration = ReconciliationIntegration()
+
+# Load data
+integration.load_data('path/to/your/data.csv')
+
+# Get dashboard data
+dashboard_data = integration.get_dashboard_data()
+
+# Get insights
+insights = integration.get_insights()
+
+# Get visualization paths
+trend_plot = integration.get_visualization_path('trend_plot.png')
+anomaly_plot = integration.get_visualization_path('anomaly_plot.png')
+category_plot = integration.get_visualization_path('category_plot.png')
 ```
 
-2. Initialize and use the agent:
-```python
-agent = InsightAgent()
-# Load your actual data here
-agent.data = your_dataframe
-insights = agent.get_insights()
-```
+## API Endpoints
 
-3. Use the API endpoints in your frontend:
-```javascript
-// Example fetch call
-fetch('http://localhost:8000/insights')
-  .then(response => response.json())
-  .then(data => {
-    // Handle insights data
-  });
-```
+- `GET /`: Dashboard home page
+- `GET /api/insights`: Get all insights
+- `GET /api/dashboard-data`: Get formatted dashboard data
+- `GET /api/visualizations/<filename>`: Get visualization images
+- `POST /api/upload`: Upload new data file
 
 ## Data Format
 
-The agent expects data in the following format:
-```python
-{
-    'timestamp': datetime,
-    'source_value': float,
-    'target_value': float,
-    'discrepancy': float,
-    'status': str,
-    'category': str
-}
-```
+The system expects CSV files with the following columns:
+- timestamp: Date and time of the reconciliation
+- source_value: Value from the source system
+- target_value: Value from the target system
+- discrepancy: Difference between source and target values
+- status: MATCH or MISMATCH
+- category: Category of the data (e.g., Sales, Inventory, Orders, Payments)
 
-## Visualization Output
+## Sample Data
 
-The agent generates two types of visualizations:
-1. Discrepancy Trends Over Time
-2. Category Distribution
-
-These are saved in the `plots` directory.
+A sample data file (`sample_data.csv`) is provided for testing. You can use this to explore the features of the insight agent.
 
 ## Contributing
 
