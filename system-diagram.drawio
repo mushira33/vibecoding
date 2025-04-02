@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-04-02T04:00:00.000Z" agent="Mozilla/5.0" version="21.6.6" etag="your-etag" type="device">
+  <diagram name="Data Reconciliation System" id="system-diagram">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- External Systems -->
+        <mxCell id="source" value="Source System" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f9f;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="target" value="Target System" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f9f;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Processing Layer -->
+        <mxCell id="processor" value="Data Processor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fbb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="validation" value="Data Validation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fbb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="comparison" value="Data Comparison" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fbb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Results Management -->
+        <mxCell id="resultsDB" value="Results Database" style="cylinder3;whiteSpace=wrap;html=1;fillColor=#bbf;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="discrepancy" value="Discrepancy Handler" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fbb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Dashboard Components -->
+        <mxCell id="stats" value="Statistics Module" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bfb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="240" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="trends" value="Trends Module" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bfb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications" value="Notification System" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bfb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- User Interface -->
+        <mxCell id="dashboard" value="Dashboard UI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bfb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actionHandler" value="Action Handler" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fbb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections -->
+        <mxCell id="sourceToProcessor" value="Raw Data" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="source" target="processor" />
+        <mxCell id="targetToProcessor" value="Raw Data" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="target" target="processor" />
+        <mxCell id="processorToValidation" value="Processed Data" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="processor" target="validation" />
+        <mxCell id="validationToComparison" value="Validated Data" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="validation" target="comparison" />
+        <mxCell id="comparisonToResults" value="Results" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0;entryY=0;" edge="1" parent="1" source="comparison" target="resultsDB" />
+        <mxCell id="comparisonToDiscrepancy" value="Discrepancies" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="comparison" target="discrepancy" />
+        <mxCell id="resultsToStats" value="Statistics" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="resultsDB" target="stats" />
+        <mxCell id="resultsToTrends" value="Trends" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="resultsDB" target="trends" />
+        <mxCell id="discrepancyToNotifications" value="Alerts" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="discrepancy" target="notifications" />
+        <mxCell id="statsToDashboard" value="Display" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0;entryY=0;" edge="1" parent="1" source="stats" target="dashboard" />
+        <mxCell id="trendsToDashboard" value="Display" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0;entryY=0;" edge="1" parent="1" source="trends" target="dashboard" />
+        <mxCell id="notificationsToDashboard" value="Display" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0;entryY=0;" edge="1" parent="1" source="notifications" target="dashboard" />
+        <mxCell id="dashboardToAction" value="User Actions" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="dashboard" target="actionHandler" />
+        <mxCell id="actionToDiscrepancy" value="Resolution Requests" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="actionHandler" target="discrepancy" />
+        <mxCell id="actionToProcessor" value="Data Updates" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0;entryY=0;" edge="1" parent="1" source="actionHandler" target="processor" />
+        
+        <!-- Legend -->
+        <mxCell id="legend" value="Legend" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legendSystem" value="System" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f9f;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legendDatabase" value="Database" style="cylinder3;whiteSpace=wrap;html=1;fillColor=#bbf;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legendUI" value="UI Component" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bfb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legendProcess" value="Process" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fbb;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="450" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile> 
