@@ -1,8 +1,16 @@
-# Data Reconciliation Dashboard
+# vibecoding
+
+Testing out vibecoding
+
+## About
+
+Testing out vibecoding
+
+## Data Reconciliation Dashboard
 
 A modern, responsive dashboard for visualizing and managing data reconciliation results. This dashboard provides a user-friendly interface for monitoring reconciliation status, tracking discrepancies, and managing data quality.
 
-## Features
+### Features
 
 - **Dark/Light Theme**: Toggle between dark and light themes for comfortable viewing
 - **Responsive Design**: Fully responsive layout that works on desktop and mobile devices
@@ -12,7 +20,7 @@ A modern, responsive dashboard for visualizing and managing data reconciliation 
 - **Search Functionality**: Quickly find specific records or discrepancies
 - **Mobile-friendly Navigation**: Collapsible sidebar for better mobile experience
 
-## Technologies Used
+### Technologies Used
 
 - HTML5
 - CSS3 (with CSS Variables for theming)
@@ -20,28 +28,28 @@ A modern, responsive dashboard for visualizing and managing data reconciliation 
 - Chart.js for data visualization
 - Font Awesome for icons
 
-## Getting Started
+### Getting Started
 
-### Prerequisites
+#### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, or Edge)
 - Basic understanding of web development (optional)
 
-### Installation
+#### Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mushira33/vibecoding.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd data-reconciliation-ui
+   cd vibecoding
    ```
 
 3. Open the project in your preferred code editor.
 
-### Running the Dashboard
+#### Running the Dashboard
 
 You can run the dashboard using any of the following methods:
 
@@ -63,10 +71,10 @@ You can run the dashboard using any of the following methods:
    ```
    Then open `http://localhost:8080` in your browser.
 
-## Project Structure
+### Project Structure
 
 ```
-data-reconciliation-ui/
+vibecoding/
 ├── css/
 │   └── style.css
 ├── js/
@@ -74,12 +82,13 @@ data-reconciliation-ui/
 ├── images/
 │   ├── logo.svg
 │   └── avatar.svg
-└── index.html
+├── index.html
+└── sequence-diagram.md
 ```
 
-## Customization
+### Customization
 
-### Theme Colors
+#### Theme Colors
 
 The dashboard uses CSS variables for theming. You can modify the colors in the `:root` section of `style.css`:
 
@@ -92,7 +101,7 @@ The dashboard uses CSS variables for theming. You can modify the colors in the `
 }
 ```
 
-### Chart Configuration
+#### Chart Configuration
 
 Chart configurations can be modified in `main.js`. The dashboard uses Chart.js for data visualization:
 
@@ -111,7 +120,7 @@ const reconciliationChart = new Chart(
 );
 ```
 
-## Contributing
+### Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -119,11 +128,11 @@ const reconciliationChart = new Chart(
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
+### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+### Acknowledgments
 
 - [Chart.js](https://www.chartjs.org/) for the charting library
 - [Font Awesome](https://fontawesome.com/) for the icons
