@@ -1,7 +1,7 @@
-# Minnesota Tennis Ball Cricket Men’s 2025 League Rankings App
+#  League Rankings App
 
 ## Overview
-A web application to display live and historical team rankings for the Minnesota Tennis Ball Cricket Men’s 2025 League. The app will feature a professional, responsive UI and interactive charts.
+A web application to display live and historical team rankings for the  League. The app will feature a professional, responsive UI and interactive charts.
 
 ## Functional Requirements
 
