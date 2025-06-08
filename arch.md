@@ -11,11 +11,11 @@ flowchart TD
         D[Node.js/Express API]
     end
     subgraph Database
-        E[PostgreSQL]
+        E[MongoDB]
     end
 
     A -- API Calls --> D
-    D -- SQL Queries --> E
+    D -- Mongo Queries --> E
     A -- Deployed on --> B
     D -- Deployed on --> C
     E -- Hosted on --> C
